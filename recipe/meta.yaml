@@ -1,5 +1,5 @@
 {% set name = "lcensemble" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lcensemble-{{ version }}.tar.gz
-  sha256: ba00723c53edf32efe96814ccd07b704dc52d44f5137c583f335f7348f6da3de
+  sha256: 873bd8bef8782976fc7b239365346a036630cef7311083dd21da8b7cfd46bf32
 
 build:
   noarch: python
@@ -19,12 +19,11 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - hyperopt >=0.2.7
-    - matplotlib-base
-    - numpy >=1.19.2
+    - hyperopt ==0.2.7
+    - numpy ==1.21.5
     - pandas ==1.3.5
     - python >=3.7
-    - scikit-learn >=1.0.0
+    - scikit-learn ==1.0.2
     - xgboost ==1.5.0
 
 test:
@@ -32,9 +31,7 @@ test:
     - lce
 
 about:
-  home: https://pypi.org/project/lcensemble/
-  doc_url: https://lce.readthedocs.io/en/latest/
-  dev_url: https://github.com/LocalCascadeEnsemble/LCE
+  home: https://lce.readthedocs.io/en/latest/
   summary: Local Cascade Ensemble package
   license: Apache-2.0
   license_file: LICENSE
