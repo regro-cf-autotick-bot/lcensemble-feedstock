@@ -1,5 +1,5 @@
 {% set name = "lcensemble" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lcensemble-{{ version }}.tar.gz
-  sha256: 873bd8bef8782976fc7b239365346a036630cef7311083dd21da8b7cfd46bf32
+  sha256: f5ef51fe1d10dc1581d041fb5c9b818e7c4aac043224b926961902d48845b236
 
 build:
   noarch: python
