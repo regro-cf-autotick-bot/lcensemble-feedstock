@@ -1,5 +1,5 @@
 {% set name = "lcensemble" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lcensemble-{{ version }}.tar.gz
-  sha256: 7762a2240d73ea0030db4d36322613923d101b22b22c7fde48d870ac65a369b4
+  sha256: 303a1c31c2a9c19251f4cafbcab194603377e5489dc34512d344c03222c8a47e
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.8
+    - catboost ==1.1.1
     - hyperopt ==0.2.7
     - lightgbm ==3.3.5
     - numpy ==1.23.3
