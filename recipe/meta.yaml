@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lcensemble-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lcensemble-{{ version }}.tar.gz
   sha256: 303a1c31c2a9c19251f4cafbcab194603377e5489dc34512d344c03222c8a47e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - catboost ==1.1.1
     - hyperopt ==0.2.7
     - lightgbm ==3.3.5
@@ -29,6 +29,8 @@ requirements:
     - xgboost ==1.6.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - lce
 
